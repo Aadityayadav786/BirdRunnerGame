@@ -7,10 +7,7 @@
     <link rel="stylesheet" href="mario.css">
 </head>
 <body>
-
-<h1></h1>
-<h1></h1>
-<h1></h1>
+<script>
     
 <button id="toggleButton">Play Music</button>
 
@@ -20,8 +17,7 @@
     Your browser does not support the audio element.
 </audio>
 
-<script>
-    // Get the button and audio element
+   // Get the button and audio element
     var button = document.getElementById("toggleButton");
     var audio = document.getElementById("myAudio");
 
@@ -46,9 +42,16 @@
     }
 
     // Add a click event listener to the button
-    button.addEventListener("click", togglePlay);
+    button.addEventListener("click", function() {
+        // Ensure audio context is created on user gesture
+        var context = new (window.AudioContext || window.webkitAudioContext)();
+        // Start or resume the audio context
+        context.resume().then(function() {
+            // Call the togglePlay function
+            togglePlay();
+        });
+    });
 </script>
-    
     <div id="modal" class="modal">
         <div class="button-container">
             <button id="register-button">Register</button>
