@@ -1,7 +1,7 @@
 
- var heading1 = document.createElement("h1");
- var heading2 = document.createElement("h1");
- var heading3 = document.createElement("h1");
+ var heading1 = document.createElement("h2");
+ var heading2 = document.createElement("h2");
+ var heading3 = document.createElement("h2");
  heading1.textContent = "Right-Left key for motion";
  heading2.textContent = "Space key for Jump";
  heading3.textContent = "Press Down /Enter on Green Pipe for new level";
